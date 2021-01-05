@@ -7,7 +7,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,9 +21,10 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '6zla#&it#b#5g-h&p)by-0y#n-6e@pzm^s6b(_kb=9%%*#!i42'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['preciousbooks.herokuapp.com']
+
 
 
 # Application definition
@@ -128,3 +129,4 @@ CRISPY_TEMPLATE_PACK= 'bootstrap4'
 LOGIN_REDIRECT_URL = 'blog-home'
 
 LOGIN_URL = 'login'
+django_heroku.settings(locals())
