@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '6zla#&it#b#5g-h&p)by-0y#n-6e@pzm^s6b(_kb=9%%*#!i42'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = True
 
 ALLOWED_HOSTS = ['preciousbooks.herokuapp.com']
 
